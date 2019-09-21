@@ -1,0 +1,37 @@
+@import '../../variables.scss';
+
+.avatar {
+  border-right: 1px solid #DBDBE2;
+  height : 500px; 
+  @media screen and (max-width:768px) { 
+    height: auto;
+    border : none;
+  }
+}
+
+.avatar button {
+  @include buttonStyles(160px,35px,'blue');
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.avatar__container {
+  width: 200px;
+  height: 200px;
+  border-radius : 4px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(45deg,#009245 ,#FCEE21);
+  margin: 0 auto;
+  margin-bottom: 16px;
+}
+
+.avatar__container figure {
+  margin: 0;
+  vertical-align: bottom;
+}
+
+.avatar_userProfile {
+  object-fit: cover;
+}

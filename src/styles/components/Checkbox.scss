@@ -1,0 +1,25 @@
+@import '../variables.scss';
+
+.checkbox__component{
+  appearance: none;
+  -ms-appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  height : 30px;
+  width : 30px;
+  background-color: #fff;
+  border-radius: 3px;
+  background-image: url('https://res.cloudinary.com/dhf6era2g/image/upload/v1568650123/assets/check-solid_dbwt92.svg');
+  background-size: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.checkbox__component:checked {
+  background-color: $green;
+}
+
+  

@@ -1,0 +1,44 @@
+@import '../../variables.scss';
+
+.challengeAbout_container {
+  font-size: 1em;
+  max-width: 1024px;
+  margin : 0 auto;
+  margin-top: 20px;
+  & p {
+    font-size: 1em;
+    margin-bottom: 16px;
+  };
+  & img {
+    display: block;
+    margin-bottom: 16px;
+    max-width: 480px;
+  };
+  & h1,h2,h3 {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #D3D3D3;
+  };
+  & a {
+    font-size: 1em;
+    color: $blue;
+    text-decoration: none;
+  };
+  @include screenXl {
+    padding: 0 10px;  
+  };
+  @include screenMd {
+    & p {
+      font-size: .9em;
+    }
+    & h1,h2,h3 {
+      font-size: 1.2em;
+    }
+  };
+  @include screenSm {
+    & img {
+      width: 100%;
+    }
+  }
+}
+

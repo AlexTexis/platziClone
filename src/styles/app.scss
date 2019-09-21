@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap');
+@import './variables.scss';
+
+body {
+  margin : 0;
+  font-family: $theme-font;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  background-color: $fill-body;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1,h2,h3,h4,h5,p {
+  margin: 0;
+}
+
+button,input,textarea {
+  font-family: $theme-font;
+}
+
+button,input {
+  outline: none
+}

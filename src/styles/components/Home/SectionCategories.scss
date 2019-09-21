@@ -1,0 +1,114 @@
+@import '../../variables.scss';
+
+.homeCategories {
+  margin-bottom: 16px;
+}
+
+.homeCategories_container {
+  max-width: 1024px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-gap: 18px;
+  font-size: 1em;
+  @include screenXl {
+    padding : 0 10px;
+    font-size: .85em;
+  };
+  @media screen and (max-width:980px) {
+    grid-template-columns: repeat(2,1fr);
+  };
+  @media screen and (max-width:720px) {
+    grid-template-columns: repeat(1,1fr);
+  };
+  @include screenSm {
+    font-size: .82em;
+   }
+}
+
+.homeCategories_item {
+  position: relative;
+  background-color: #FFF;
+  height: 50px;
+  border-radius: 4px;
+  display: flex;
+  overflow: hidden;
+  color : #273B47;
+  cursor: pointer;
+  &:hover::before {
+    width : 100%;
+  }
+  &:hover {
+    color : #fff;
+  }
+}
+
+.homeCategories_item::before {
+  content: '';
+  position:absolute;
+  height: 100%;
+  width: 18%;
+  transition: .3s ease-in;
+  z-index: 0;
+  @media screen and (max-width:720px) {
+    width: 70px;
+  }
+}
+
+.homeCategories_item:nth-of-type(1)::before {
+  background-color: #33B13A;
+}
+.homeCategories_item:nth-of-type(2)::before {
+  background-color: #BB141B;
+}
+.homeCategories_item:nth-of-type(3)::before {
+  background-color: #F5C443;
+}
+.homeCategories_item:nth-of-type(4)::before {
+  background-color: #FA7800;
+}
+.homeCategories_item:nth-of-type(5)::before {
+  background-color: #28B3E2;
+}
+
+.homeCategories_itemIcon {
+  width: 18%;
+  position:relative;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: 50%;
+  @media screen and (max-width:720px) {
+    width: 70px;
+  }
+}
+
+.homeCategories-code {
+  background-image: url('https://res.cloudinary.com/dhf6era2g/image/upload/v1568650076/assets/category-code_ekimmc.png');
+}
+
+.homeCategories-increase {
+  background-image: url('https://res.cloudinary.com/dhf6era2g/image/upload/v1568650102/assets/category-startup_tjdqet.png');
+}
+
+.homeCategories-business {
+  background-image: url('https://res.cloudinary.com/dhf6era2g/image/upload/v1568650062/assets/category-bussines_d94uma.png');
+}
+
+.homeCategories-visual {
+  background-image: url('https://res.cloudinary.com/dhf6era2g/image/upload/v1568650093/assets/category-movies_moaeh8.png');
+}
+
+.homeCategories-marketing {
+  background-image: url('https://res.cloudinary.com/dhf6era2g/image/upload/v1568650085/assets/category-marketing_dtzjaj.png');
+}
+
+.homeCategories_itemTitle {
+  position: relative;
+  width:82%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding : 0 12px;
+  font-size: .9em;
+}

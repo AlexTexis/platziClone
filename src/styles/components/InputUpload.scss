@@ -1,0 +1,26 @@
+.inputUploadContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.inputUpload_btn {
+  width: 20%;
+  height : 35px;
+  border : none;
+  background-color: #0791E8;
+  color: #fff;
+}
+
+.inputUpload_titleFile {
+  font-size: .9em;
+  width: 80%;
+  height : 35px;
+  border:1px solid #0791E8;
+  line-height: 35px;
+  padding : 0 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  background-color: #fff;
+}

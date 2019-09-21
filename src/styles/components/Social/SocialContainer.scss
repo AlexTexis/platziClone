@@ -1,0 +1,25 @@
+@import '../../variables.scss';
+
+.social__container {
+  max-width : 620px;
+  margin : 0 auto;
+  padding : 20px 0;
+  @include screenXl {
+    padding:  0 10px;
+  }
+}
+
+.social__container h2 {
+  margin-bottom: 16px;
+}
+
+.social__btnToPost {
+  margin-bottom: 16px;
+  border : none;
+  height :35px;
+  width: 100px;
+  background-color: $green;
+  color: $white;
+  border-radius: 4px;
+  cursor: pointer;
+}

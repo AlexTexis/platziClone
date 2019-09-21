@@ -1,0 +1,138 @@
+@import '../variables.scss';
+
+.nav_container {
+  width: auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding : 10px 0;
+  font-size: 1em;
+}
+
+.nav_links {
+  border-right: 1px solid #fff;
+  padding-right: 16px;
+  margin-right: 16px;
+  height: 100%;
+  @include screenMd{
+    display: none;
+    &.showMenu {
+      position: absolute;
+      padding: 10px;
+      left: 0;
+      top: 50px;
+      height: 100vh;
+      width: 100%;
+      background-color: #244457;
+      background-image: url('https://static.platzi.com/static/images/header-v2/bg-menu.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: right;
+      z-index: 1;
+      display: grid;
+      grid-template: 40px 1fr / 1fr;
+      border: none;
+    };
+    &.showMenu .nav_linksSearch  {
+      display: block
+    };
+    &.showMenu  ul {
+      display: block;
+      padding: 10px 0;
+       & li {
+        margin:0 0 10px 0;
+        padding-bottom: 6px;
+        border-bottom: 1px solid rgba(255,255,255,.4)
+      }
+    };
+  }
+}
+
+.nav_menu {
+  cursor: pointer;
+  font-size: 1em;
+  display: none;
+  color : #fff;
+  @include screenMd {
+    display: block;
+  }
+}
+
+.nav_linksSearch {
+  display: none;
+  width: 100%;
+  height: 40px;
+  border:none;
+  padding : 0 10px;
+  border-radius: 4px;
+}
+
+.nav_links ul{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding : 0;
+  margin: 0;
+}
+
+.nav_links li {
+  list-style:none;
+  margin-left: 16px;
+  font-size: 1em;
+}
+
+.nav_link {
+  text-decoration: none;
+  color: #fff;
+}
+
+.nav_btnSession {
+  @include buttonStyles(auto,35px,'green');
+  text-decoration: none;
+  margin-right: 16px;
+}
+
+.nav_userContainer {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-right: 16px;
+  position: relative;
+}
+
+.nav_userContainer figure {
+  margin : 0;
+  width : 38px;
+  height: 38px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #fff;
+  margin-right: 6px;
+}
+
+.nav_userContainer figure img {
+  object-fit: cover;
+  vertical-align: bottom;
+} 
+
+.nav_userArrow {
+  font-size: 1.2em;
+  color : #fff;
+  transform: rotate(-90deg);
+  cursor: pointer;
+}
+
+.nav_searchContainer {
+  height: 100%;
+}
+
+.nav_search {
+  height: 100%;
+  border:none;
+  border-radius : 4px;
+  padding : 0 10px;
+  @include screenMd {
+    display: none;
+  }
+}

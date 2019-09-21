@@ -1,0 +1,38 @@
+@import '../variables.scss';
+
+.header {
+ background-image: $fill-header;
+ height : 50px;
+ box-shadow: 0 3px 12px -6px rgba(0,0,0,.9);
+ padding : 0 10px;
+ font-size: .9em;
+ position: relative;
+}
+
+.header_container {
+  height: inherit;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header_logoContainer {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width : 100px;
+}
+
+.header_logoImg {
+  object-fit: contain;
+}
+
+.header_logoImg {
+  width : 34px;
+  height: 25px;
+} 
+
+.header_logoContainer img:nth-of-type(2) {
+  width : 50px;
+}

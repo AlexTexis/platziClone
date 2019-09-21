@@ -1,0 +1,146 @@
+@import '../variables.scss';
+ 
+.hero {
+  height : auto;
+  background: $fill-header;
+  color : $white;
+  padding : 20px 0 0 0;
+}
+
+.hero_container {
+  position: relative;
+  background-image: url('https://res.cloudinary.com/dhf6era2g/image/upload/v1568650023/assets/bg_hero_ydhpv8.webp');
+  max-width: $screen-large;
+  margin : 0 auto;
+  background-size: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-size: 1em;
+  @include screenXl {
+    max-width: 620px;
+    margin: 0 auto;
+    font-size: .85em;
+  }
+  @include screenMd {  
+    padding : 0 10px;
+  }
+  @include screenSm {
+    overflow: hidden;
+    font-size: .82em;
+   }
+}
+
+.hero_description {
+  width: 600px;
+  @include screenMd {
+    width: 100%;
+   }
+}
+
+.hero_description h1 {
+  margin-bottom: 10px;
+  font-size: 2em;
+}
+
+.hero_statsContainer {
+  display : flex;
+  align-items: center;
+  width : 320px;
+  height : 80px;
+  &:nth-of-type(2) {
+    margin-bottom: 20px;
+  };
+  @include screenMd {
+     height: auto;
+     flex-direction: column;
+     align-items: flex-start;
+     margin-bottom: 20px;
+     &:nth-of-type(2) {
+      margin-bottom: 30px;
+    };
+   }
+}
+
+.hero_statsContainer span {
+ color: $blue;  
+ font-size : 3em;
+ margin-right: 10px;
+}
+
+.hero_statsContainer p { 
+ font-size : 1em;
+ @include screenSm {
+  width: 180px
+ }
+}
+
+.hero_btn {
+  display: block;
+}
+
+.hero_btn:nth-of-type(1) {
+  @include buttonStyles(400px,50px,'green');
+  margin-bottom: 14px;
+  font-size: 1em;
+  @include screenXl{
+    width : 220px;
+    font-size: .9em;
+  };
+  @include screenMd {
+    width: 100%;
+   }
+}
+
+.hero_btn:nth-of-type(2) {
+  @include buttonStyles(400px,30px,'none');
+  margin-bottom: 14px;
+  font-size: 1em;
+  border:1px solid $white;
+  @include screenXl {
+    width : 220px;
+    font-size: .9em;
+  };
+  @include screenMd{
+    width: 100%;
+   }
+}
+
+.hero_floatImg {
+  width : 288px;
+  height: 422px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-image: url('https://res.cloudinary.com/dhf6era2g/image/upload/v1568650137/assets/hero_person_md_rb0w4j.webp');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+  @include screenXl {
+    width : 200px;
+    top: 0;
+  };
+  @include screenMd{
+    top: -20px;
+  }
+  @include screenSm {
+   right: -48px;
+   top: 0;
+   width: 180px
+  }
+}
+
+.hero_floatBottomImg{
+  height: 120px;
+  position: relative;
+  background: transparent;
+}
+
+.hero_floatBottomImg img {
+  width: 155px;
+  object-fit: contain;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin:  0 auto;
+}

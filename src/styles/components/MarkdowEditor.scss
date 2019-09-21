@@ -1,0 +1,95 @@
+@import '../variables.scss';
+
+.markdownEditor_container {
+  width: 100%;
+  height: 250px;
+  margin-bottom: 16px;
+  background-color: $white;
+  border : 1px solid $blue
+}
+
+.markdownEditor_header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 15%;
+  color: $white;
+  background-color: $blue;
+}
+
+.markdownEditor_header p {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.markdownEditor_gridContainer {
+  height: 85%;
+  display: grid;
+  grid-template: 1fr / 1fr 1fr;
+}
+
+.markdownEditor_boxWrite {
+  border: none;
+  box-shadow: 1px 0 0 0 $blue;
+  height: 100%;
+}
+
+.markdownEditor_boxWrite textarea {
+  width: 100%;
+  height: 100%;
+  padding : 14px;
+  border: none;
+  font-size: 1em;
+}
+
+.markdownEditor_resultMd  {
+  width: auto;
+  padding : 14px;
+  font-size: 1em;
+  overflow: auto;
+}
+
+.markdownEditor_resultMd h1,
+.markdownEditor_resultMd h2,
+.markdownEditor_resultMd h3 {
+  border-bottom: 1px solid #F3F3F3;
+}
+
+.markdownEditor_resultMd h1 {
+  font-size: 1.4em;
+  margin-bottom: 5px 
+}
+
+.markdownEditor_resultMd h2 {
+  font-size: 1.2em;
+  margin-bottom: 5px
+}
+
+.markdownEditor_resultMd h3 {
+  font-size: 1em;
+  margin-bottom: 5px
+}
+
+.markdownEditor_resultMd  a {
+  color: $blue;
+  text-decoration: none;
+  font-size: .9em;
+  margin-bottom: 5px 
+}
+
+.markdownEditor_resultMd p {
+  margin-bottom: 5px ;
+  font-size: .9em;
+} 
+
+.markdownEditor_resultMd img {
+  display: block;
+  width: 80%;
+  margin : 0 auto;
+}
+
+.markdownEditor_resultMd blockquote {
+  border-left: 4px solid #eee;
+  padding: 0 10px;
+  margin: 0;
+}

@@ -1,0 +1,71 @@
+$theme-font : 'Poppins', sans-serif;
+$green : #89C739;
+$fill-header : linear-gradient(90deg, #1c3643 0, #273b47 25%, #1e5372);
+$fill-body : #F3F3F6;
+$blue : #33B1FF;
+$white : #fff;
+$red-google : #E34133;
+$blue-twitter : #6DB0E1;
+$redLight : #F53B66;
+
+//MEDIA QUERIES SIZES
+$screen-extralarge : 1100px;
+$screen-large : 1024px; 
+$screen-medium : 780px; 
+$screen-small : 580px; 
+
+
+//MIXINS
+@mixin dialogStylesDefault {
+  background-color: $white;
+  max-width: 520px;
+  margin:0 auto;
+  min-height : 160px;
+  margin-top: 60px;
+  padding : 16px;
+  border-radius : 5px;
+}
+
+@mixin buttonStyles($width,$height,$background) {
+  @if $background == 'green' {
+    background-color: $green;
+  };
+  @if $background == 'blue' {
+    background-color: $blue;
+  };
+  @if $background == 'none' {
+    background-color: transparent;
+  };
+  padding : 0 7px;
+  width : $width;
+  height : $height;
+  border-radius : 3px;
+  line-height: $height;
+  color : $white;
+  border:none;
+}
+
+
+@mixin screenXl() {
+  @media screen and (max-width : #{$screen-extralarge}) {
+    @content;
+  }
+}
+
+@mixin screenLg() {
+  @media screen and (max-width : #{$screen-large}) {
+    @content;
+  }
+}
+
+@mixin screenMd() {
+  @media screen and (max-width : #{$screen-medium}) {
+    @content;
+  }
+}
+
+@mixin screenSm() {
+  @media screen and (max-width : #{$screen-small}) {
+    @content;
+  }
+}

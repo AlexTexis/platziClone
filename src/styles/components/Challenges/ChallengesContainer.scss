@@ -1,0 +1,18 @@
+@import '../../variables.scss';
+
+.challenges {
+  padding : 10px 0;
+  margin-bottom: 16px;
+}
+
+.challenges__container {
+  max-width: $screen-large;
+  margin: 0 auto;
+  @include screenXl{ 
+    padding : 0 10px;
+  }
+}
+
+.challenges__container h2 {
+  margin-bottom: 16px;
+}

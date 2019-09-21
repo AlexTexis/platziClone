@@ -1,0 +1,25 @@
+@import '../../variables.scss';
+
+.profile__container {
+  max-width: 1024px;
+  margin: auto;
+  padding : 20px 0;
+  @include screenXl {
+    padding : 20px 10px;
+  }
+}
+
+.profile__container h2 {
+  margin-bottom: 16px;
+}
+
+.profile__gridContainer {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  grid-template-areas: "avatar about";
+  @media screen and (max-width:768px) {
+    grid-template-columns: 1fr;
+    grid-template-areas: "avatar" 
+                         "about";
+  }
+}

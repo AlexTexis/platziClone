@@ -1,0 +1,64 @@
+@import '../../variables.scss';
+
+.dialogSelectPhoto_container {
+  @include dialogStylesDefault;
+}
+
+.dialogSelectPhoto_imagesContainer {
+  padding: 14px 0 20px 0;
+  display: flex;
+  align-items: center;
+  overflow: auto;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  margin-bottom: 16px;
+}
+
+.dialogSelectPhoto_container h3 {
+  margin-bottom: 10px
+}
+
+.dialogSelectPhoto_imgContainer{
+  position: relative;
+}
+
+.dialogSelectPhoto_imgContainer img {
+  flex-shrink: 0;
+  width: 80px;
+  height : 80px;
+  border:3px solid #eee;
+  background-color: #A8A9AD;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 7px;
+  cursor: pointer;
+  &.selected {
+    border: 3px solid $green;
+  }
+}
+
+.dialogSelectPhoto_trashImage {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  background-color: #0684D3;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.dialogSelectPhoto_container button {
+  height: 35px;
+  background-color: #0684D3;
+  color : #fff;
+  border:none;
+  border-radius: 4px;
+  width: 160px;
+  &[disabled] {
+    background-color: rgba(6, 132, 211,.5)
+  }
+}

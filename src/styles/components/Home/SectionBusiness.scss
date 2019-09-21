@@ -1,0 +1,26 @@
+@import '../../variables.scss' ;
+
+.business {
+  font-size: 1em;
+  padding: 14px 0 0 0;
+  margin-bottom: 16px;
+}
+
+.bussiness_container {
+  max-width: 1024px;
+  margin:  0 auto;
+  @include screenXl {
+   padding:  0 10px;
+   font-size : .85em;
+  }
+  @include screenSm {
+    font-size: .82em;
+   }
+}
+
+.bussiness_container p {
+  text-align: center;
+  font-size: 1em;
+  max-width: 500px;
+  margin: 0 auto;
+}

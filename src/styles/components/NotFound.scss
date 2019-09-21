@@ -1,0 +1,32 @@
+.notFound {
+  height: 100vh;
+  background-color: #15210A;
+}
+
+.notFound_container {
+  position: relative;
+  top : 100px;
+  max-width: 780px;
+  height: 300px;
+  margin: 0 auto;
+  background-image: url('https://res.cloudinary.com/dhf6era2g/image/upload/v1568650166/assets/stars-pttnr.27975c1c9c27_rrtnns.png')
+}
+
+.notFound_container img {
+  width: 360px;
+  display: block;
+  margin: 0 auto;
+}
+
+.notFound_container h2 {
+  color: #fff;
+  font-size: 2.5em;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.notFound_container p {
+  color: #fff;
+  text-align: center;
+  margin: 16px 0;
+}

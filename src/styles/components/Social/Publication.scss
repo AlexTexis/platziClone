@@ -1,0 +1,108 @@
+@import '../../variables.scss';
+
+.publication {
+  height : auto;
+  box-shadow: 0 4px 12px -6px rgba(0,0,0,.4);
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 28px;
+}
+
+.publication__container {
+  height: 100%;
+  display: grid;
+  grid-template: 40px 1fr 70px / 1fr;
+  grid-template-areas: "owner"
+                       "cover"
+                       "toolbar";
+}
+
+.publication__owner {
+  background-color: $white;
+  display: flex;
+  align-items: center;
+  padding : 0 14px
+}
+
+.publication_nameOwner {
+  font-weight: bold;
+}
+
+.publication__cover {
+  grid-area: cover;
+  background-color : #eee;
+  height: auto;
+  overflow: hidden;
+}
+
+.publication__cover img {
+  width: 100%;
+  vertical-align: bottom;
+}
+
+.publication_toolbar {
+  grid-area: toolbar;
+  background-color: $white;
+  position: relative;
+}
+
+.publication__icon{
+  width : 60px;
+  height : 60px;
+  position: absolute;
+  border-radius: 50%;
+  bottom: 42px;
+  color:$white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .3s;
+  cursor: pointer;
+  &:active {
+    transform: scale(.9)
+  }
+}
+
+.publication_iconMessage {
+  background-color: $green;
+  left: 20px;
+}
+
+.publication_iconlike {
+  left: 90px;
+  background-color: $blue;
+  &.false {
+    background-color: $blue;
+  }
+  &.true {
+    background-color: $redLight;
+  }
+}
+
+.publication__stats {
+  height : 100%;
+  width: 100%;
+  padding : 0 18px; 
+}
+
+.publication__stats div:nth-of-type(1) {
+  height : 35px;
+  display: flex;
+  justify-content: flex-end;
+};
+
+.publication__stats div:nth-of-type(2) p {
+    font-size: .9em;
+    color : #262626;
+}
+
+.publication__stats span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width : 30px;
+}
+
+.publication__countLikes{
+  margin-right: 12px;
+}
