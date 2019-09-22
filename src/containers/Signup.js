@@ -4,7 +4,7 @@ import FormSignup from '../components/Signup/Form'
 import { Helmet } from 'react-helmet'
 
 const Signup = () => (
-  <Layout isVisibleNav={false}>
+  <Layout isVisibleNav={false} isVisivleFooter={false}>
     <Helmet>
       <title>Sign up | PlatziClon</title>
       <meta name='description' content='Create una cuenta para disfutar | PlatziClon'/>

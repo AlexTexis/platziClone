@@ -4,7 +4,7 @@ import FormSignin from '../components/Signin/Form'
 import { Helmet } from 'react-helmet'
 
 const Signin = () => (
-  <Layout isVisibleNav={false}>
+  <Layout isVisibleNav={false} isVisivleFooter={false}>
     <Helmet>
       <title>Sign in | PlatziClon</title>
       <meta name='description' content='Inicia sesion | PlatziClon'/>

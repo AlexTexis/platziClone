@@ -1,7 +1,8 @@
 import React from 'react'
 import Header from './Header'
+import Footer from './Footer'
 
-const Layout = ({children,isVisibleNav}) => {
+const Layout = ({children,isVisibleNav,isVisivleFooter}) => {
   return (
     <div className='layout'>
       <Header isVisibleNav={isVisibleNav}/>
@@ -10,6 +11,7 @@ const Layout = ({children,isVisibleNav}) => {
           children
         }
       </div>
+      <Footer isVisivleFooter={isVisivleFooter}/>
     </div>
   )
 }

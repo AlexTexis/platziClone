@@ -43,7 +43,7 @@ const Social = ({publications,user,errors,getPublications}) => {
   }
 
   return (
-      <Layout>
+      <Layout isVisivleFooter={false}>
         <Helmet>
         <title>Social Media | PlatziClon</title>
         <meta name='description' content='Compartenos algo interesante | PlatziClon'/>

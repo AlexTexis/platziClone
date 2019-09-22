@@ -36,7 +36,7 @@ const Profile = ({user,getDataUser,updateInterests}) => {
   }
 
   return (
-  <Layout>
+  <Layout isVisivleFooter={false}>
     <Helmet>
       <title>Mi perfil</title>
       <meta name='description' content='Mi perfil'/>

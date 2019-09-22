@@ -1,0 +1,118 @@
+@import '../variables.scss';
+
+footer{
+  background : $fill-header;
+  font-size: 1em;
+  padding : 16px 0;
+}
+
+footer figure {
+  margin: 0;
+}
+
+.footer_container {
+  max-width: $screen-large;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-gap : 18px;
+  @include screenXl {
+    padding: 0 10px;
+  }
+  @include screenMd {
+    grid-template-columns: 1fr
+  }
+}
+
+.footer_sloganSection {
+  color : $white;
+  font-size: .9em;
+  @include screenSm {
+    font-size : .85em;
+  }
+}
+
+.footer_sloganSection div:nth-of-type(1) {
+  margin-bottom: 16px;
+  & figure {
+    height: 50px;
+  }
+  & img {
+    position:relative;
+    left: -16px;
+    top: -10px;
+  }
+}
+
+.footer_categoriesSection a {
+  display: block;
+  color : $white;
+  text-decoration: none;
+  font-size:.9em;
+  margin-bottom: 10px;
+  padding :  0 0 0 6px;
+  position: relative;
+  @include screenSm {
+    font-size : .85em;
+  }
+  &:after {
+    content: '';
+    border-right:4px solid transparent;
+    border-left:4px solid $white;
+    border-bottom:4px solid transparent;
+    border-top:4px solid transparent;
+    position: absolute;
+    top : 50%;
+    left: 98%;
+    transform: translate(0,-50%)
+  }
+  &:nth-of-type(1) {
+    border-left: 3px solid #33B13A;
+  }
+  &:nth-of-type(2) {
+    border-left: 3px solid #6B407E;
+  }
+  &:nth-of-type(3) {
+    border-left: 3px solid #29B8E8;
+  }
+  &:nth-of-type(4) {
+    border-left: 3px solid #F5C443;
+  }
+  &:nth-of-type(5) {
+    border-left: 3px solid #98CA3F;
+  }
+  &:nth-of-type(6) {
+    border-left: 3px solid #FA7800;
+  }
+  &:nth-of-type(7) {
+    border-left: 3px solid #CB161D;
+  }
+}
+
+.footer_certifiersSection {
+  color : $white;
+  font-size : .9em;
+  @include screenSm {
+    font-size : .85em;
+  }
+  & figure {
+    display: inline-block;
+    margin-right: 12px;
+  }
+  & p {
+    margin-bottom: 10px;
+  }
+}
+
+.footer_socialsContainer a {
+  color : $white;
+  text-decoration: none;
+}
+
+.footer_socialsContainer p {
+  margin-bottom: 16px;
+}
+
+.footer_iconSocial {
+  margin-right: 16px;
+}
