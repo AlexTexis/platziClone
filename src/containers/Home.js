@@ -4,6 +4,7 @@ import Hero from '../components/Hero'
 import SectionBussiness from '../components/Home/HomeBusiness'
 import SectionSearch from '../components/Home/HomeSearh'
 import SectionCategories from '../components/Home/HomeCategories'
+import Prices from '../components/Prices'
 import { Helmet } from 'react-helmet'
 
 const Home = () => {
@@ -17,6 +18,7 @@ const Home = () => {
       <SectionBussiness/>
       <SectionSearch/>
       <SectionCategories/>
+      <Prices/>
     </Layout>
   )
 }

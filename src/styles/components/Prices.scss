@@ -1,0 +1,173 @@
+@import '../variables.scss';
+
+.prices_section {
+  max-width: $screen-large;
+  margin : 0 auto;
+  margin-bottom: 40px;
+  font-size: 1em;
+  & h2 {
+    text-align: center;
+    margin-bottom: 16px;
+    font-size: 1.4em;
+    @include screenMd {
+      font-size: 1.2em;
+    }
+  }
+  @include screenXl {
+    padding:  0 10px;
+  }
+}
+
+.prices_container {
+  display: flex;
+}
+
+.price_head {
+  height: 120px;
+   & h3 {
+    padding: 0 10px;
+    position: relative;
+    top : 90px;
+  }
+  @include screenMd {
+    display: none;
+  }
+}
+
+.prices_details {
+  width: 760px;
+  @media screen and (max-width:920px) {
+    width: 600px;
+  }
+}
+
+.price_detailsFeature p{
+  height: 46px;
+  line-height: 15px;
+  display: flex;
+  align-items: center;
+  padding : 0 10px;
+  font-size: .9em;
+  &:nth-of-type(2n) {
+    background-color: $white;
+  }
+  @media screen and (max-width:920px) {
+    font-size: .85em;
+  }
+  @include screenSm {
+    font-size: .75em;
+  }
+}
+
+.prices_itemsContainer{
+ display: grid;
+ grid-template-columns: repeat(3,1fr);
+ width: 100%;
+ grid-gap: 10px;
+ @include screenMd {
+  grid-template-columns: 1fr;
+ }
+}
+
+.priceItem {
+  width: auto;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow:  0 0 0 1px #E9E9E9;
+  &.selected {
+    display: none;
+  }
+  @include screenMd {
+    display: none;
+    &.selected {
+      display: block;
+    } 
+  }
+}
+
+.priceItem_head {
+  height: 120px;
+  & h3 {
+    background-color: $green;
+    font-size: 1em;
+    height: 35px;
+    line-height: 35px;
+    width: 100%;
+    color : $white;
+    text-align: center;
+    @media screen and (max-width:920px) {
+      font-size: .9em;
+    }
+  }
+  & .priceItem_quantity {
+    font-size: .85em;
+    text-align: center;
+    font-weight: bold;
+    @media screen and (max-width:920px) {
+      font-size: .8em;
+    }
+  }
+  & .priceItem_quantity span {
+    color : $green;
+    display: block;
+    font-size: 1.8em;
+    @media screen and (max-width:920px) {
+      font-size: 1.6em;
+    }
+  }
+  & .priceItem_description {
+    display: block;
+    font-size: .80em;
+    text-align: center;
+    @media screen and (max-width:920px) {
+      font-size: .7em;
+    }
+  }
+  @include screenMd {
+    display: none;
+  }
+}
+
+.priceItem_features span {
+  display: block;
+  height: 46px;
+  line-height: 46px;
+  padding: 0 10px;
+  text-align: center;
+  &:nth-of-type(2n) {
+    background-color: $white
+  }
+}
+
+.price_featureCheck {
+  color : $green;
+}
+
+.price_featureUncheck {
+  color : $redLight;
+}
+
+.prices_tabNavigation  {
+  display: grid;
+  margin-bottom: 16px;
+  grid-template-columns: repeat(3,1fr);
+  & button {
+  border : none;
+  height : 35px;
+  box-shadow: 0 0 0 1px #E9E9E9;
+  cursor: pointer;
+  &.actived {
+    box-shadow: 0 0 0 1px $green;
+    background-color: $white;
+   }
+  } 
+}
+
+.prices_tabNavigation {
+  width: 100%;
+  display: none;
+  @include screenMd {
+    display: grid;
+    grid-template-columns: repeat(3,1fr)
+  }
+}
