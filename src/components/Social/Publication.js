@@ -1,4 +1,4 @@
-import React,{useState,Fragment} from 'react'
+import React,{useState,Fragment,useRef} from 'react'
 import { FaCommentDots,FaHeart } from 'react-icons/fa'
 import { MdMessage } from 'react-icons/md'
 import { setPublicationSelected,addLike,removeLike } from '../../actions/publicationsActions'
@@ -8,6 +8,7 @@ import '../../styles/components/Social/Publication.scss'
 
 const Publication = ({showDialogComments,id,setPublicationSelected,publications,addLike,removeLike,user}) => {
   const [viewDescriptionComplete,setViewDescriptionComplete] = useState(false)
+  const coverContainer = useRef(null)
   const {
     ownerName,
     cover,
@@ -42,8 +43,11 @@ const Publication = ({showDialogComments,id,setPublicationSelected,publications,
         <div className="publication__owner">
           <span className='publication_nameOwner'>{ownerName}</span>
         </div>
-        <div className="publication__cover">
-          <img src={cover} alt=""/>
+        <div className="publication__cover" ref={coverContainer}>
+          <img 
+            src={cover} 
+            onLoad={() => coverContainer.current.style.height = 'auto'} 
+            alt={cover}/>
         </div>
         <div className='publication_toolbar'>
     
