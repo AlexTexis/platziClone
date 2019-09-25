@@ -31,7 +31,7 @@ const ChallengeAbout = ({match,challenge,getChallenge}) => {
   }
   
   return (
-    <Layout>
+    <Layout className='stickyFooter'>
       <Helmet>
         <title>{challenge.title}</title>
         <meta name='description' content={challenge.title}/>
