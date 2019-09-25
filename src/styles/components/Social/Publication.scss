@@ -11,7 +11,7 @@
 .publication__container {
   height: 100%;
   display: grid;
-  grid-template: 40px 1fr 70px / 1fr;
+  grid-template: 40px 1fr auto / 1fr;
   grid-template-areas: "owner"
                        "cover"
                        "toolbar";
@@ -50,6 +50,7 @@
   width : 60px;
   height : 60px;
   position: absolute;
+  top: -30px;
   border-radius: 50%;
   bottom: 42px;
   color:$white;
@@ -65,11 +66,11 @@
 
 .publication_iconMessage {
   background-color: $green;
-  left: 20px;
+  left: 0;
 }
 
 .publication_iconlike {
-  left: 90px;
+  left: 70px;
   background-color: $blue;
   &.false {
     background-color: $blue;
@@ -85,15 +86,26 @@
   padding : 0 18px; 
 }
 
-.publication__stats div:nth-of-type(1) {
+.publication_widgetsContainer {
+  position: relative;
   height : 35px;
   display: flex;
   justify-content: flex-end;
-};
+}
 
 .publication__stats div:nth-of-type(2) p {
     font-size: .9em;
     color : #262626;
+    display: inline-block;
+    margin-bottom: 9px;
+    line-height: 17px;
+    &:nth-of-type(1) {
+      margin-right: 8px;
+    }
+    &:nth-of-type(2) {
+      color: #999999;
+      cursor: pointer;
+    }
 }
 
 .publication__stats span {

@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState,Fragment} from 'react'
 import { FaCommentDots,FaHeart } from 'react-icons/fa'
 import { MdMessage } from 'react-icons/md'
 import { setPublicationSelected,addLike,removeLike } from '../../actions/publicationsActions'
@@ -7,6 +7,7 @@ import { urlApi } from '../../utils/urlApi'
 import '../../styles/components/Social/Publication.scss'
 
 const Publication = ({showDialogComments,id,setPublicationSelected,publications,addLike,removeLike,user}) => {
+  const [viewDescriptionComplete,setViewDescriptionComplete] = useState(false)
   const {
     ownerName,
     cover,
@@ -32,7 +33,8 @@ const Publication = ({showDialogComments,id,setPublicationSelected,publications,
     url : `${urlApi}/publications/${id}/likes/${findIdLike()}`,
   })
   const findIdLike = () => likes.find( like => like.userId === user.id )._id
-
+  const cutDescription = (description) => `${description.slice(0,70)}...` 
+  const viewMoreDescription = () => setViewDescriptionComplete(true)
 
   return (
     <article className='publication'>
@@ -44,24 +46,36 @@ const Publication = ({showDialogComments,id,setPublicationSelected,publications,
           <img src={cover} alt=""/>
         </div>
         <div className='publication_toolbar'>
-          <div className="publication__icon publication_iconMessage" onClick={handleComments}>
-            <FaCommentDots size={32}/>
-          </div>
-          <div className={`publication__icon publication_iconlike ${liked ? 'true': 'false'}`}>
-            {
-              liked ?
-              <FaHeart size={32} onClick={handleDislikes}/>
-              :
-              <FaHeart size={32} onClick={handleLikes}/>
-            }
-          </div>
+    
           <div className="publication__stats">
-            <div>
+            <div className='publication_widgetsContainer'>
+              <div className="publication__icon publication_iconMessage" onClick={handleComments}>
+               <FaCommentDots size={32}/>
+              </div>
+              <div className={`publication__icon publication_iconlike ${liked ? 'true': 'false'}`}>
+                {
+                  liked ?
+                  <FaHeart size={32} onClick={handleDislikes}/>
+                  :
+                  <FaHeart size={32} onClick={handleLikes}/>
+                }
+              </div>
               <span className='publication__countLikes'><FaHeart size={15} color={liked ? '#F53B66' : "#262626"}/>{likes.length}</span>
               <span className='publication__countComments'><MdMessage color='#262626' size={15}/>{commenters.length}</span>
             </div>
             <div>
-              <p>{description}</p>
+              {
+                description.length > 70 ? // si la cantidad de caracteres es mayor a 70
+                  !viewDescriptionComplete ? // si no estas viendo la description completa
+                    <Fragment>
+                      <p>{ cutDescription(description) }</p> 
+                      <p onClick={viewMoreDescription}>mas</p> 
+                    </Fragment>
+                  :
+                   <p>{ description }</p> 
+                :
+                <p>{ description }</p> 
+              }
             </div>
           </div>
         </div>
