@@ -104,6 +104,42 @@ function publications(state=initialState,action) {
           }
         }
       }
+    case 'ADD_LIKE_COMMENT':
+      idPublication = action.payload.idPublication
+      return {
+        ...state,
+        publications : {
+          ...state.publications,
+          [idPublication] : {
+            ...state.publications[idPublication],
+            commenters : state.publications[idPublication].commenters.map( comment => {
+              if(comment._id === action.payload.idComment){ 
+                comment.liked = true
+                comment.likes.push(action.payload.like)
+              }
+              return comment
+            })
+          }
+        }
+      }
+    case 'REMOVE_LIKE_COMMENT':
+      idPublication = action.payload.idPublication
+      return {
+        ...state,
+        publications : {
+          ...state.publications,
+          [idPublication] : {
+            ...state.publications[idPublication],
+            commenters : state.publications[idPublication].commenters.map( comment => {
+              if(comment._id === action.payload.idComment){ 
+                comment.liked = false
+                comment.likes = comment.likes.filter( like => like.idUser !== action.payload.idUser)
+              }
+              return comment
+            })
+          }
+        }
+      }
     default :
       return state
   }

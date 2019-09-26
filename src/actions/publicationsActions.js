@@ -49,6 +49,16 @@ const commentRemove = (idComment,idPublication) => ({
   payload : { idComment,idPublication }
 })
 
+const likeCommentAdd = (idPublication,idComment,like) => ({
+  type : 'ADD_LIKE_COMMENT',
+  payload : { idPublication,idComment,like }
+})
+
+const likeCommentRemove = (idPublication,idComment,idUser) => ({
+  type : 'REMOVE_LIKE_COMMENT',
+  payload : { idPublication,idComment,idUser }
+})
+
 //*************************************************REQUESTS********************************************************************************
 
 export const getPublications = ({ url,stateRequest }) => dispatch => {
@@ -211,5 +221,51 @@ export const removePublication = ({url,stateRequest,idCover}) => dispatch => {
     let status = error.request.status 
     let errorMessage = error.response.data.message
     if(status === 401) return redirectByUnauthorized()
+  })
+}
+
+//ADD LIKE TO COMMENT PUBLICATION
+export const addLikeComment = ({url,stateRequest,data}) => dispatch => {
+  stateRequest(true) 
+  axios({
+    url,
+    method : 'POST',
+    data,
+    headers : {
+      'Authorization' : `Bearer ${getCookie('token')}`
+    }
+  })
+  .then(({data}) => {
+    stateRequest(false)
+    dispatch(likeCommentAdd(data.publicationId,data.commentId,data.like))
+  })
+  .catch(error => {
+    stateRequest(false)
+    let status = error.request.status
+    let errorMessage = error.response ? error.response.data.message : error.message
+    if(status === 401) redirectByUnauthorized()
+  })
+}
+
+//REMOVE LIKE TO COMMENT PUBLICATION
+export const removeLikeComment = ({url,stateRequest,data}) => dispatch => {
+  stateRequest(true) 
+  axios({
+    url,
+    method : 'DELETE',
+    data,
+    headers : {
+      'Authorization' : `Bearer ${getCookie('token')}`
+    }
+  })
+  .then(({data}) => {
+    stateRequest(false)
+    dispatch(likeCommentRemove(data.publicationId,data.commentId,data.idUser))
+  })
+  .catch(error => {
+    stateRequest(false)
+    let status = error.request.status
+    let errorMessage = error.response ? error.response.data.message : error.message
+    if(status === 401) redirectByUnauthorized()
   })
 }
