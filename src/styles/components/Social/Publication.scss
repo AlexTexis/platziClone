@@ -11,7 +11,7 @@
 .publication__container {
   height: 100%;
   display: grid;
-  grid-template: 40px 1fr auto / 1fr;
+  grid-template: 45px 1fr auto / 1fr;
   grid-template-areas: "owner"
                        "cover"
                        "toolbar";
@@ -21,7 +21,18 @@
   background-color: $white;
   display: flex;
   align-items: center;
-  padding : 0 14px
+  padding : 0 14px;
+  & figure {
+    margin :0;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right : 5px;
+    border : 1px solid #999999;
+  }
+  & figure img {
+    object-fit: cover;
+    vertical-align: bottom;
+  }
 }
 
 .publication_nameOwner {

@@ -33,6 +33,19 @@ function publications(state=initialState,action) {
         ...state,
         publications : removePublication(state.publications,idPublication)
       }
+    case 'UPDATE_AVATAR_OWNER' :
+      const updateAvatarOwner = (publications,idUser,avatar) => {
+        let publicationsUpdated = {}
+        Object.keys(publications).forEach( id => {
+          if(publications[id].ownerId === idUser) {publications[id].ownerAvatar = avatar}
+          publicationsUpdated = { ...publicationsUpdated, [id] : { ...publications[id] } }
+        })
+        return publicationsUpdated
+      }
+      return {
+        ...state,
+        publications : updateAvatarOwner(state.publications,action.payload.idUser,action.payload.avatar)
+      }
     case 'ADD_LIKE':
       idPublication = action.payload.idPublication
       return {

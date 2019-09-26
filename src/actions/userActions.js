@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { getCookie } from '../utils/getCookieValue'
 import { redirectByUnauthorized } from '../utils/redirectByUnauthorized'
+import { updateAvatarOwner } from './publicationsActions'
 
 export const setInformationUser = ({_id,avatar,email,interests,username,publications,listAvatars}) => ({
   type : 'SET_INFORMATION_USER',
@@ -107,6 +108,7 @@ export const uploadAvatar = ({url,stateRequest,data}) => dispatch => {
         avatar : data.avatar,
         avatarId : data.avatarId
       }))
+      dispatch(updateAvatarOwner(data.avatar,data.userId))
       resolve(true)
     })
     .catch(error => {
@@ -133,6 +135,7 @@ export const updateAvatarUser = ({url,stateRequest,avatar}) => dispatch => {
       stateRequest(false)
       document.cookie =`avatar=${data.avatar};path=/`
       dispatch(updateAvatar(data.avatar))
+      dispatch(updateAvatarOwner(data.avatar,data.userId))
       resolve(true)
     })
     .catch( error => {

@@ -24,6 +24,11 @@ const deletePublication= (idPublication) => ({
   payload : idPublication
 })
 
+export const updateAvatarOwner = (avatar,idUser) => ({
+  type : 'UPDATE_AVATAR_OWNER',
+  payload  : { avatar,idUser }
+})
+
 const likeAdd = (idPublication,data) => ({
   type : 'ADD_LIKE',
   payload : { idPublication,data }

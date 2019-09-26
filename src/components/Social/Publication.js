@@ -11,6 +11,7 @@ const Publication = ({showDialogComments,id,setPublicationSelected,publications,
   const coverContainer = useRef(null)
   const {
     ownerName,
+    ownerAvatar,
     cover,
     liked,
     likes,
@@ -41,6 +42,13 @@ const Publication = ({showDialogComments,id,setPublicationSelected,publications,
     <article className='publication'>
       <div className='publication__container'>
         <div className="publication__owner">
+          <figure>
+            <img 
+              width={32} 
+              height={32} 
+              src={ownerAvatar ? ownerAvatar : 'https://res.cloudinary.com/dhf6era2g/image/upload/v1568650159/assets/platzi_kbmfai.png'} 
+              alt=''/>
+          </figure>
           <span className='publication_nameOwner'>{ownerName}</span>
         </div>
         <div className="publication__cover" ref={coverContainer}>

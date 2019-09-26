@@ -23,6 +23,7 @@ const DialogUploadPublication = ({hideDialog,createPublication,user}) => {
     formData.append('description',description.value)
     formData.append('ownerId',user.id)
     formData.append('ownerName',user.username)
+    formData.append('ownerAvatar',user.avatar)
 
     createPublication({
     url : `${urlApi}/publications`,
