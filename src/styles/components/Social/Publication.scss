@@ -46,9 +46,11 @@
   overflow: hidden;
 }
 
+
 .publication__cover img {
   width: 100%;
   vertical-align: bottom;
+  @include animationNearScreen()
 }
 
 .publication_toolbar {

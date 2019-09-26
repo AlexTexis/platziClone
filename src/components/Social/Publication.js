@@ -3,11 +3,13 @@ import { FaCommentDots,FaHeart } from 'react-icons/fa'
 import { MdMessage } from 'react-icons/md'
 import { setPublicationSelected,addLike,removeLike } from '../../actions/publicationsActions'
 import { connect } from 'react-redux'
+import { useNearScreen } from '../../hooks/useNearScreen'
 import { urlApi } from '../../utils/urlApi'
 import '../../styles/components/Social/Publication.scss'
 
 const Publication = ({showDialogComments,id,setPublicationSelected,publications,addLike,removeLike,user}) => {
   const [viewDescriptionComplete,setViewDescriptionComplete] = useState(false)
+  const [show,ref] = useNearScreen()
   const coverContainer = useRef(null)
   const {
     ownerName,
@@ -39,7 +41,7 @@ const Publication = ({showDialogComments,id,setPublicationSelected,publications,
   const viewMoreDescription = () => setViewDescriptionComplete(true)
 
   return (
-    <article className='publication'>
+    <article className='publication' ref={ref}>
       <div className='publication__container'>
         <div className="publication__owner">
           <figure>
@@ -52,10 +54,13 @@ const Publication = ({showDialogComments,id,setPublicationSelected,publications,
           <span className='publication_nameOwner'>{ownerName}</span>
         </div>
         <div className="publication__cover" ref={coverContainer}>
-          <img 
-            src={cover} 
-            onLoad={() => coverContainer.current.style.height = 'auto'} 
-            alt={cover}/>
+          {
+            show &&
+            <img 
+              src={cover} 
+              onLoad={() => coverContainer.current.style.height = 'auto'} 
+              alt={cover}/>
+          }
         </div>
         <div className='publication_toolbar'>
     

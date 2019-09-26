@@ -69,3 +69,19 @@ $screen-small : 580px;
     @content;
   }
 }
+
+@mixin keyframeNearScreen () {
+  @keyframes nearScreen {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+@mixin animationNearScreen() {
+  @include keyframeNearScreen();
+  animation : .3s nearScreen ease;
+}
